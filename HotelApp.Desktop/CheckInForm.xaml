@@ -1,0 +1,45 @@
+﻿<Window x:Class="HotelApp.Desktop.CheckInForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HotelApp.Desktop"
+        mc:Ignorable="d" FontSize="20" FontFamily="Segoe UI"
+        Title="CheckInForm" Height="350" Width="500" WindowStartupLocation="CenterOwner">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="0" >
+            <TextBlock FontWeight="Bold"  Margin="5">Reservations:</TextBlock>
+            <TextBlock x:Name="firstNameText" Margin="5"/>
+            <TextBlock x:Name="lastNameText" Margin="5"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="1">
+            <TextBlock FontWeight="Bold" Margin="5">Room:</TextBlock>
+            <TextBlock x:Name="typeText" Margin="5"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="2">
+            <TextBlock FontWeight="Bold" Margin="5">Room Number:</TextBlock>
+            <TextBlock x:Name="roomNumberText" Margin="5"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="3">
+            <TextBlock FontWeight="Bold" Margin="5">Total Cost:</TextBlock>
+            <TextBlock x:Name="totalCostText" Margin="5"/>
+        </StackPanel>
+        <Button Margin="20 10" Grid.Row="4"
+                x:Name="checkInUser" Click="CheckInUser_OnClick">
+            Confirm Check-In
+        </Button>
+    </Grid>
+</Window>
