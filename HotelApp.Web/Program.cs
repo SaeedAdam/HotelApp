@@ -1,5 +1,6 @@
 using HotelAppLibrary.Data;
 using HotelAppLibrary.Databases;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,7 +8,26 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddTransient<IDatabaseData, SqlData>();
 builder.Services.AddTransient<ISqlDataAccess, SqlDataAccess>();
+builder.Services.AddTransient<ISqliteDataAccess, SqliteDataAccess>();
 
+
+
+
+string dbChoice = builder.Configuration.GetValue<string>("DatabaseChoice").ToLower();
+
+if (dbChoice == "sql")
+{
+    builder.Services.AddTransient<IDatabaseData, SqlData>();
+}
+else if (dbChoice == "sqlite")
+{
+    builder.Services.AddTransient<IDatabaseData, SqliteData>();
+}
+else
+{
+    // Fallback / Default Value
+    builder.Services.AddTransient<IDatabaseData, SqlData>();
+}
 
 var app = builder.Build();
 

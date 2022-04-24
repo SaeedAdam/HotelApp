@@ -5,7 +5,7 @@ AS
 begin
 	set nocount on;
 
-	select [b].[Id], [b].[RoomId], [b].[GuestId], [b].[StartDate], [b].[EndDate], [b].[ChekedIn], 
+	select [b].[Id], [b].[RoomId], [b].[GuestId], [b].[StartDate], [b].[EndDate], [b].[CheckedIn], 
 		[b].[TotalCost],[g].[FirstName], [g].[LastName], [r].[RoomNumber], [r].[RoomTypeId], 
 		[t].[Type], [t].[Description], [t].[Price] 
 	from dbo.Bookings b
