@@ -123,13 +123,13 @@ namespace HotelAppLibrary.Data
 			return output;
 		}
 
-		public void CheckInGuest(int Id)
+		public void CheckInGuest(int id)
 		{
 			var sql = @"update Bookings
 						set CheckedIn = 1
 						where Id = @bookingId;";
 
-			_db.SaveData(sql, new { bookingId = Id }, ConnectionStringName);
+			_db.SaveData(sql, new { bookingId = id }, ConnectionStringName);
 		}
 
 		public RoomTypeModel GetRoomTypeById(int id)

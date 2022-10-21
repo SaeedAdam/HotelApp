@@ -13,7 +13,7 @@ namespace HotelAppLibrary.Databases
         {
             _config = config;
         }
-        public List<T> LoadData<T, U>(string sqlStatement, U parameters, string connectionStringName, bool isStoredProcedure = false)
+        public List<T> LoadData<T, TU>(string sqlStatement, TU parameters, string connectionStringName, bool isStoredProcedure = false)
         {
             string connectionString = _config.GetConnectionString(connectionStringName);
             CommandType commandType = CommandType.Text;

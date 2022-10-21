@@ -2,8 +2,8 @@
 {
     public interface ISqlDataAccess
     {
-        List<T> LoadData<T, U>(string sqlStatement,
-            U parameters,
+        List<T> LoadData<T, TU>(string sqlStatement,
+            TU parameters,
             string connectionStringName,
             bool isStoredProcedure = false);
 

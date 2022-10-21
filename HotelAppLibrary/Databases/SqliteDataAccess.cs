@@ -20,7 +20,7 @@ namespace HotelAppLibrary.Databases
         {
             _config = config;
         }
-        public List<T> LoadData<T, U>(string sqlStatement, U parameters, string connectionStringName)
+        public List<T> LoadData<T, TU>(string sqlStatement, TU parameters, string connectionStringName)
         {
             string connectionString = _config.GetConnectionString(connectionStringName);
 

@@ -59,9 +59,9 @@ namespace HotelAppLibrary.Data
                 true);
         }
 
-        public void CheckInGuest(int Id)
+        public void CheckInGuest(int id)
         {
-            _db.SaveData("dbo.spBookings_CheckIn", new {bookingId = Id }, ConnectionStringName, true);
+            _db.SaveData("dbo.spBookings_CheckIn", new {bookingId = id }, ConnectionStringName, true);
         }
 
         public RoomTypeModel GetRoomTypeById(int id)

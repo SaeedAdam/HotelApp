@@ -39,7 +39,7 @@ namespace HotelApp.Desktop
 
         private void CheckInButton_OnClick(object sender, RoutedEventArgs e)
         {
-            var checkInForm = App.serviceProvider.GetService<CheckInForm>();
+            var checkInForm = App.ServiceProvider.GetService<CheckInForm>();
             var model = (BookingFullModel)((Button)e.Source).DataContext;
 
             checkInForm.PopulateCheckInInfo(model);
